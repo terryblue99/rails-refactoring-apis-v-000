@@ -14,7 +14,7 @@ class RepositoriesController < ApplicationController
 	github = GithubService.new
 
 	github.create_repo(params[:name])
-
+	
 	redirect_to root_path
 
   end
