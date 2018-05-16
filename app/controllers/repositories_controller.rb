@@ -11,11 +11,6 @@ class RepositoriesController < ApplicationController
 
   def create
 
-  	# @repos_response = Faraday.post "https://api.github.com/user/repos", 
-	  # 	{name: params[:name]}.to_json, 
-	  # 	{'Authorization' => "token #{session[:token]}", 
-	  # 	'Accept' => 'application/json'}
-
 	github = GithubService.new
 
 	github.create_repo(params[:name])
@@ -25,7 +20,3 @@ class RepositoriesController < ApplicationController
   end
 
 end
-
-# def create_repo(name)
-# 	Faraday.post "https://api.github.com/user/repos", {name: name}.to_json, {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
-# end
