@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user
       # make sure to pass in the scope parameter (`repo` scope should be appropriate for what we want to do) in step of the auth process!
       # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
+      # redirect_uri = CGI.escape("http://localhost:3000/auth")
       if !logged_in?
           redirect_to "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo"
       end
