@@ -4,7 +4,7 @@ class RepositoriesController < ApplicationController
 
 	github = GithubService.new({"access_token" => session[:token]})
 	
-	@repos_array = github.get_repos  	
+	@repos_array = github.get_repos(session[:username]) 	
 
   end
 
