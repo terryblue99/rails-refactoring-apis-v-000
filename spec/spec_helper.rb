@@ -65,7 +65,7 @@ RSpec.configure do |config|
       'Content-Type'=>'application/x-www-form-urlencoded',
       'User-Agent'=>'Faraday v0.9.1'
        }).
-     to_return(status: 200, body: "", headers: {})
+     to_return(status: 201, body: "", headers: {})
 
     stub_request(:post, "https://api.github.com/user/repos").
      with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
